@@ -42,7 +42,8 @@ export const portfolioData = {
       { name: "JavaScript", percentage: 88, icon: "fab fa-js-square" },
       { name: "Python", percentage: 85, icon: "fab fa-python" },
       { name: "DSA", percentage: 88, icon: "fas fa-code" },
-      { name: "React Native", percentage: 75, icon: "fab fa-react" }
+      { name: "React Native", percentage: 75, icon: "fab fa-react" },
+       { name: "Machine Learning", percentage: 80, icon: "fas fa-brain" },
     ],
     web: [
       { name: "HTML/CSS", percentage: 95, icon: "fab fa-html5" },
@@ -53,7 +54,7 @@ export const portfolioData = {
     database: [
       { name: "MongoDB", percentage: 85, icon: "fas fa-database" },
       { name: "MySQL", percentage: 90, icon: "fas fa-database" },
-      { name: "Machine Learning", percentage: 80, icon: "fas fa-brain" },
+      // { name: "Machine Learning", percentage: 80, icon: "fas fa-brain" },
       { name: "Git", percentage: 90, icon: "fab fa-git-alt" },
       { name: "AWS", percentage: 85, icon: "fas fa-cloud" }
     ]
@@ -61,22 +62,22 @@ export const portfolioData = {
 
   projects: [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce website with payment integration and user authentication.",
-      image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-      tags: ["React", "Node.js", "MongoDB", "Stripe API"]
+      title: "HealtFirst Online",
+      description: "An Machine learning based healthcare tool that recommends medicines based on user symptoms with real-time predictions and a clean, secure interface. It also includes an interactive map showing nearby doctors and clinics for quick medical assistance",
+      image: "/image.png",
+      tags: ["Machine Learning", "Python", "Flask", "Healthcare AI", "Google Maps API", "Jupyter NoteBook", "Geolocation"]
     },
     {
-      title: "Task Management App",
-      description: "A productivity application for managing tasks with drag and drop functionality.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-      tags: ["React Native", "Firebase", "Redux"]
+      title: "QuizMaster Pro",
+      description: "A dynamic quiz-learning platform with interactive quizzes, real-time scoring, and category-based practice. It offers live classes, daily quizzes, live quiz competitions, and premium features like advanced analytics and adaptive difficulty powered by paid APIs.",
+      image: "/quiz.png",
+      tags: ["React JS", "Javascript","MongoDB","HTML","CSS"]
     },
     {
-      title: "Data Visualization Dashboard",
-      description: "An interactive dashboard for visualizing complex data sets with various chart types.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-      tags: ["D3.js", "JavaScript", "Python", "Flask"]
+      title: "Stock Market Analyzer",
+      description: "An interactive analytics tool that visualizes market trends and uses data-driven models to predict stock movements, helping users make smarter investment decisions.",
+      image: "/ml.png",
+      tags: ["Machine Learning", "Python","Flask"]
     }
   ],
 
