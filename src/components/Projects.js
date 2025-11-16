@@ -2,25 +2,30 @@ import React, { useState, useRef } from 'react';
 import { portfolioData } from '../data/portfolioData';
 
 const Projects = () => {
-  const [pausedProject, setPausedProject] = useState(null);
+  const [expandedProject, setExpandedProject] = useState(null);
+  const [expandedSmallProject, setExpandedSmallProject] = useState(null);
   const scrollContainerRef = useRef(null);
 
-  const handleProjectClick = (project, index) => {
-    // Toggle pause state for clicked project
-    if (pausedProject === index) {
-      setPausedProject(null);
+  const handleProjectToggle = (index) => {
+    if (expandedProject === index) {
+      setExpandedProject(null);
     } else {
-      setPausedProject(index);
+      setExpandedProject(index);
     }
-    
-    // Optional: Add actual project link handling here
-    // window.open(project.link, '_blank');
+  };
+
+  const handleSmallProjectToggle = (index) => {
+    if (expandedSmallProject === index) {
+      setExpandedSmallProject(null);
+    } else {
+      setExpandedSmallProject(index);
+    }
   };
 
   const handleOutsideClick = (e) => {
-    // If clicking outside project cards, resume all animations
-    if (!e.target.closest('.project-card-animated')) {
-      setPausedProject(null);
+    if (!e.target.closest('.project-card-animated') && !e.target.closest('.small-project-card')) {
+      setExpandedProject(null);
+      setExpandedSmallProject(null);
     }
   };
 
@@ -39,8 +44,9 @@ const Projects = () => {
   return (
     <section id="projects" className="projects-section" onClick={handleOutsideClick}>
       <div className="container">
+        {/* Main Projects Section */}
         <div className="section-title">
-          <h2>My Projects</h2>
+          <h2>Featured Projects</h2>
           <p>A selection of my recent work and personal projects</p>
         </div>
         
@@ -50,13 +56,24 @@ const Projects = () => {
         >
           {portfolioData.projects.map((project, index) => (
             <div 
-              key={index} 
-              className={`project-card-animated ${pausedProject === index ? 'animation-paused' : ''}`}
-              onClick={(e) => {
-                e.stopPropagation();
-                handleProjectClick(project, index);
-              }}
+              key={project.id} 
+              className={`project-card-animated ${expandedProject === index ? 'project-expanded' : ''}`}
             >
+              {/* Project Header with Toggle Button */}
+              <div className="project-header">
+                <h3>{project.title}</h3>
+                <button 
+                  className="project-toggle-btn"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleProjectToggle(index);
+                  }}
+                >
+                  <i className={`fas ${expandedProject === index ? 'fa-minus' : 'fa-plus'}`}></i>
+                </button>
+              </div>
+
+              {/* Project Image */}
               <div className="project-img-animated">
                 <img src={project.image} alt={project.title} />
                 <div className="project-overlay-animated">
@@ -85,36 +102,132 @@ const Projects = () => {
                 </div>
               </div>
               
-              <div className="project-info-animated">
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <div className="project-tags-animated">
-                  {project.tags.map((tag, tagIndex) => (
-                    <span key={tagIndex}>{tag}</span>
-                  ))}
+              {/* Project Details - Only visible when expanded */}
+              <div className={`project-details ${expandedProject === index ? 'expanded' : ''}`}>
+                <div className="project-info-animated">
+                  <p>{project.description}</p>
+                  
+                  {project.features && (
+                    <div className="project-features">
+                      <h4>Key Features:</h4>
+                      <ul>
+                        {project.features.map((feature, featureIndex) => (
+                          <li key={featureIndex}>{feature}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  
+                  <div className="project-tags-animated">
+                    {project.tags.map((tag, tagIndex) => (
+                      <span key={tagIndex}>{tag}</span>
+                    ))}
+                  </div>
+                  
+                  <div className="project-links">
+                    <a 
+                      href={project.link || "#"} 
+                      className="project-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <i className="fas fa-external-link-alt"></i> View Live Demo
+                    </a>
+                    {project.github && (
+                      <a 
+                        href={project.github} 
+                        className="project-link github-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <i className="fab fa-github"></i> View Code
+                      </a>
+                    )}
+                  </div>
                 </div>
-                <a 
-                  href={project.link || "#"} 
-                  className="project-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  View Project <i className="fas fa-arrow-right"></i>
-                </a>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Navigation Arrows */}
-        <div className="projects-nav">
-          <button className="nav-arrow" onClick={scrollLeft}>
-            <i className="fas fa-chevron-left"></i>
-          </button>
-          <button className="nav-arrow" onClick={scrollRight}>
-            <i className="fas fa-chevron-right"></i>
-          </button>
+        {/* Small Projects Section */}
+        <div className="small-section-title">
+          <h2>Small Projects & Experiments</h2>
+          <p>Quick projects, experiments, and learning exercises</p>
+        </div>
+
+        <div className="small-projects-container">
+          {portfolioData.smallProjects.map((project, index) => (
+            <div 
+              key={project.id} 
+              className={`small-project-card ${expandedSmallProject === index ? 'small-project-expanded' : ''}`}
+            >
+              {/* Small Project Header */}
+              <div className="small-project-header">
+                <h3>{project.title}</h3>
+                <button 
+                  className="small-project-toggle-btn"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleSmallProjectToggle(index);
+                  }}
+                >
+                  <i className={`fas ${expandedSmallProject === index ? 'fa-minus' : 'fa-plus'}`}></i>
+                </button>
+              </div>
+
+              {/* Small Project Details - Only visible when expanded */}
+              <div className={`small-project-details ${expandedSmallProject === index ? 'expanded' : ''}`}>
+                <div className="small-project-info">
+                  <p>{project.description}</p>
+                  
+                  {project.features && (
+                    <div className="small-project-features">
+                      <h4>Features:</h4>
+                      <ul>
+                        {project.features.map((feature, featureIndex) => (
+                          <li key={featureIndex}>{feature}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  
+                  <div className="small-project-tags">
+                    {project.tags.map((tag, tagIndex) => (
+                      <span key={tagIndex}>{tag}</span>
+                    ))}
+                  </div>
+                  
+                  <div className="small-project-links">
+                    {project.link && project.link !== "#" && (
+                      <a 
+                        href={project.link} 
+                        className="small-project-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <i className="fas fa-external-link-alt"></i> Live Demo
+                      </a>
+                    )}
+                    {project.github && project.github !== "#" && (
+                      <a 
+                        href={project.github} 
+                        className="small-project-link github-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <i className="fab fa-github"></i> View Code
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 

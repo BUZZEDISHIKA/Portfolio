@@ -1,3 +1,4 @@
+// data/portfolioData.js
 export const portfolioData = {
   personalInfo: {
     name: "Ishika Bagchi",
@@ -43,7 +44,7 @@ export const portfolioData = {
       { name: "Python", percentage: 85, icon: "fab fa-python" },
       { name: "DSA", percentage: 88, icon: "fas fa-code" },
       { name: "React Native", percentage: 75, icon: "fab fa-react" },
-       { name: "Machine Learning", percentage: 80, icon: "fas fa-brain" },
+      { name: "Machine Learning", percentage: 80, icon: "fas fa-brain" },
     ],
     web: [
       { name: "HTML/CSS", percentage: 95, icon: "fab fa-html5" },
@@ -54,7 +55,6 @@ export const portfolioData = {
     database: [
       { name: "MongoDB", percentage: 85, icon: "fas fa-database" },
       { name: "MySQL", percentage: 90, icon: "fas fa-database" },
-      // { name: "Machine Learning", percentage: 80, icon: "fas fa-brain" },
       { name: "Git", percentage: 90, icon: "fab fa-git-alt" },
       { name: "AWS", percentage: 85, icon: "fas fa-cloud" }
     ]
@@ -62,24 +62,108 @@ export const portfolioData = {
 
   projects: [
     {
+      id: 1,
       title: "HealtFirst Online",
       description: "An Machine learning based healthcare tool that recommends medicines based on user symptoms with real-time predictions and a clean, secure interface. It also includes an interactive map showing nearby doctors and clinics for quick medical assistance",
       image: "/image.png",
-      tags: ["Machine Learning", "Python", "Flask", "Healthcare AI", "Google Maps API", "Jupyter NoteBook", "Geolocation"]
+      features: [
+        "Symptom-based medicine recommendations",
+        "Real-time predictions using ML models",
+        "Interactive map for nearby doctors",
+        "Secure user interface",
+        "Geolocation services",
+        "Healthcare analytics"
+      ],
+      tags: ["Machine Learning", "Python", "Flask", "Healthcare AI", "Google Maps API", "Jupyter NoteBook", "Geolocation"],
+      link: "#",
+      github: "#"
     },
     {
+      id: 2,
       title: "QuizMaster Pro",
       description: "A dynamic quiz-learning platform with interactive quizzes, real-time scoring, and category-based practice. It offers live classes, daily quizzes, live quiz competitions, and premium features like advanced analytics and adaptive difficulty powered by paid APIs.",
       image: "/quiz.png",
-      tags: ["React JS", "Javascript","MongoDB","HTML","CSS"]
+      features: [
+        "Interactive quiz system",
+        "Real-time scoring and leaderboard",
+        "Live quiz competitions",
+        "Category-based practice",
+        "Premium analytics dashboard",
+        "Adaptive difficulty system"
+      ],
+      tags: ["React JS", "Javascript", "MongoDB", "HTML", "CSS"],
+      link: "#",
+      github: "#"
     },
     {
+      id: 3,
       title: "Stock Market Analyzer",
       description: "An interactive analytics tool that visualizes market trends and uses data-driven models to predict stock movements, helping users make smarter investment decisions.",
       image: "/ml.png",
-      tags: ["Machine Learning", "Python","Flask"]
-    }
+      features: [
+        "Real-time market data visualization",
+        "Stock price prediction models",
+        "Technical analysis tools",
+        "Portfolio tracking",
+        "Risk assessment",
+        "Historical data analysis"
+      ],
+      tags: ["Machine Learning", "Python", "Flask"],
+      link: "#",
+      github: "#"
+    },
   ],
+
+  smallProjects: [
+    {
+      id: 1,
+      title: "Snake Game",
+      description: "Classic snake game written in C++ with smooth gameplay, score tracking, and increasing difficulty levels. Built using object-oriented programming principles.",
+      features: [
+        "Classic snake gameplay",
+        "Score tracking system",
+        "Increasing difficulty",
+        "Game over detection",
+        "Smooth controls"
+      ],
+      tags: ["C++", "Game", "OOP"],
+      link: "#",
+      github: "https://github.com/example"
+    },
+    {
+      id: 2,
+      title: "Weather Dashboard",
+      description: "A responsive weather dashboard that displays current weather conditions and forecasts with beautiful UI and location-based services.",
+      features: [
+        "Current weather display",
+        "5-day forecast",
+        "Location-based services",
+        "Responsive design",
+        "Weather icons"
+      ],
+      tags: ["React", "API", "Weather"],
+      link: "#",
+      github: "#"
+    },
+   
+    {
+      id: 3,
+      title: "Calculator App",
+      description: "A fully functional calculator with basic arithmetic operations and a clean, intuitive interface.",
+      features: [
+        "Basic arithmetic operations",
+        "Clear and delete functions",
+        "Responsive design",
+        "Error handling",
+        "Keyboard support"
+      ],
+      tags: ["JavaScript", "Utility", "Web App"],
+      link: "#",
+      github: "#"
+    },
+   
+  ],
+
 
   greetings: [
     { text: "Hello", subtext: "Welcome to my portfolio" },
