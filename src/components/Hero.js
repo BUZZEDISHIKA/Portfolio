@@ -50,22 +50,12 @@ const Hero = () => {
 
         <p>I create beautiful, functional digital experiences with cutting-edge technology</p>
 
-        <div className="hero-badges-container">
-  <div className="hero-badges-marquee">
-    <div className="hero-badges-track">
-      <span className="badge">Coder</span>
-      <span className="badge">C & C++</span>
-      <span className="badge">PYTHON</span>
-      <span className="badge">React.Js</span>
-      {/* Duplicate for seamless loop */}
-      <span className="badge">Coder</span>
-      <span className="badge">C & C++</span>
-      <span className="badge">PYTHON</span>
-      <span className="badge">React.Js</span>
-    </div>
-  </div>
-</div>
-
+        <div className="hero-badges">
+          <span className="badge">Coder</span>
+          <span className="badge">C & C++</span>
+          <span className="badge">PYTHON</span>
+          <span className="badge">Rect.Js</span>
+        </div>
 
         <div className="hero-buttons">
           <a href="#projects" className="btn btn-primary">View My Work</a>
