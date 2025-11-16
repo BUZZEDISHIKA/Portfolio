@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import emailjs from "emailjs-com";
+import emailjs from 'emailjs-com';
 import { portfolioData } from '../data/portfolioData';
 
 const Contact = () => {
@@ -9,6 +9,8 @@ const Contact = () => {
     subject: '',
     message: ''
   });
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -19,29 +21,37 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsLoading(true);
 
     emailjs.send(
-      "ishika_2003",     // <-- replace
-      "template_mp91x19",    // <-- replace
+      "ishika_2003",
+      "template_mp91x19",
       {
         name: formData.name,
         email: formData.email,
         subject: formData.subject,
         message: formData.message
       },
-      "WXVYx1Hw1WExqOGgA"      // <-- replace
+      "WXVYx1Hw1WExqOGgA"
     )
     .then(() => {
-      alert("Message Sent Successfully!");
+      setIsLoading(false);
+      setIsSubmitted(true);
       setFormData({
         name: '',
         email: '',
         subject: '',
         message: ''
       });
+      
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        setIsSubmitted(false);
+      }, 5000);
     })
     .catch((error) => {
       console.error("Error sending email:", error);
+      setIsLoading(false);
       alert("Something went wrong. Please try again.");
     });
   };
@@ -92,6 +102,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
+                  placeholder="Enter your full name"
                 />
               </div>
 
@@ -103,6 +114,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
+                  placeholder="Enter your email address"
                 />
               </div>
 
@@ -114,6 +126,7 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
+                  placeholder="What is this regarding?"
                 />
               </div>
 
@@ -124,15 +137,32 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
+                  placeholder="Tell me about your project or just say hello..."
                 ></textarea>
               </div>
 
-              <button type="submit" className="submit-btn">Send Message</button>
+              <button 
+                type="submit" 
+                className={`submit-btn ${isLoading ? 'loading' : ''}`}
+                disabled={isLoading}
+              >
+                {isLoading ? 'Sending...' : 'Send Message'}
+              </button>
+
+              {isSubmitted && (
+                <div className="form-success">
+                  <i className="fas fa-check-circle"></i> Message sent successfully! I'll get back to you soon.
+                </div>
+              )}
             </form>
           </div>
-
         </div>
       </div>
+
+      {/* Background Animation Shapes */}
+      <div className="shape shape-contact-1"></div>
+      <div className="shape shape-contact-2"></div>
+      <div className="shape shape-contact-3"></div>
     </section>
   );
 };
