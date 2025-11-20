@@ -126,7 +126,7 @@ export const portfolioData = {
         "GIF Used"
       ],
       tags: ["HTML", "CSS", "JavaScript"],
-      link: "tic-tac-toe-ishikacreates6.netlify.app",
+      link: "https://tic-tac-toe-ishikacreates6.netlify.app/",
       github: "https://github.com/BUZZEDISHIKA/tic-tac-toe"
     },
     {
