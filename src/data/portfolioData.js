@@ -75,7 +75,6 @@ export const portfolioData = {
         "Healthcare analytics"
       ],
       tags: ["Machine Learning", "Python", "Flask", "Healthcare AI", "Google Maps API", "Jupyter NoteBook", "Geolocation"],
-      link: "healthfirstonline.netlify.app",
       github: "https://github.com/BUZZEDISHIKA/Medicine-recommender-Ishika"
     },
     {
@@ -92,7 +91,6 @@ export const portfolioData = {
         "Adaptive difficulty system"
       ],
       tags: ["React JS", "Javascript", "MongoDB", "HTML", "CSS"],
-      link: "#",
       github: "https://github.com/BUZZEDISHIKA/QuizMasterPro"
     },
     {
@@ -109,7 +107,6 @@ export const portfolioData = {
         "Historical data analysis"
       ],
       tags: ["Machine Learning", "Python", "Flask"],
-      link: "#",
       github: "https://github.com/BUZZEDISHIKA/Stock-market-ishika"
     },
   ],
@@ -129,37 +126,37 @@ export const portfolioData = {
       link: "https://tic-tac-toe-ishikacreates6.netlify.app/",
       github: "https://github.com/BUZZEDISHIKA/tic-tac-toe"
     },
-    {
-      id: 2,
-      title: "Weather Dashboard",
-      description: "A responsive weather dashboard that displays current weather conditions and forecasts with beautiful UI and location-based services.",
-      features: [
-        "Current weather display",
-        "5-day forecast",
-        "Location-based services",
-        "Responsive design",
-        "Weather icons"
-      ],
-      tags: ["React", "API", "Weather"],
-      link: "#",
-      github: "#"
-    },
+    // {
+    //   id: 2,
+    //   title: "Weather Dashboard",
+    //   description: "A responsive weather dashboard that displays current weather conditions and forecasts with beautiful UI and location-based services.",
+    //   features: [
+    //     "Current weather display",
+    //     "5-day forecast",
+    //     "Location-based services",
+    //     "Responsive design",
+    //     "Weather icons"
+    //   ],
+    //   tags: ["React", "API", "Weather"],
+    //   // link: "#",
+    //   // github: "#"
+    // },
    
-    {
-      id: 3,
-      title: "Calculator App",
-      description: "A fully functional calculator with basic arithmetic operations and a clean, intuitive interface.",
-      features: [
-        "Basic arithmetic operations",
-        "Clear and delete functions",
-        "Responsive design",
-        "Error handling",
-        "Keyboard support"
-      ],
-      tags: ["JavaScript", "Utility", "Web App"],
-      link: "#",
-      github: "#"
-    },
+    // {
+    //   id: 3,
+    //   title: "Calculator App",
+    //   description: "A fully functional calculator with basic arithmetic operations and a clean, intuitive interface.",
+    //   features: [
+    //     "Basic arithmetic operations",
+    //     "Clear and delete functions",
+    //     "Responsive design",
+    //     "Error handling",
+    //     "Keyboard support"
+    //   ],
+    //   tags: ["JavaScript", "Utility", "Web App"],
+    //   link: "#",
+    //   github: "#"
+    // },
    
   ],
 

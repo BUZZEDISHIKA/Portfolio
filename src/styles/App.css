@@ -4077,3 +4077,147 @@ footer {
     transition: none !important;
   }
 }
+/* === COMPACT PROJECT SECTION === */
+
+/* Reduce overall section padding */
+.projects-section {
+  padding: 3rem 0;
+}
+
+/* Make project cards more compact */
+.project-card-animated {
+  min-width: 280px;
+  max-width: 320px;
+  margin: 0.5rem;
+}
+
+/* Reduce card content padding */
+.project-info-animated {
+  padding: 1rem;
+}
+
+.project-info-animated h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-info-animated p {
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.4;
+}
+
+/* Make project tags smaller */
+.project-tags-animated {
+  margin-bottom: 1rem;
+}
+
+.project-tags-animated span {
+  padding: 0.2rem 0.6rem;
+  font-size: 0.75rem;
+}
+
+/* Reduce image height */
+.project-img-animated {
+  height: 160px;
+}
+
+/* Make overlay buttons smaller */
+.overlay-btn {
+  padding: 0.6rem 1rem;
+  font-size: 0.8rem;
+}
+
+/* Adjust project header */
+.project-header {
+  padding: 0.8rem 1rem 0.3rem;
+}
+
+.project-header h3 {
+  font-size: 1.1rem;
+}
+
+.project-toggle-btn {
+  width: 30px;
+  height: 30px;
+}
+
+.project-toggle-btn i {
+  font-size: 0.8rem;
+}
+
+/* Compact project details */
+.project-details.expanded {
+  padding: 0 1rem 1rem;
+}
+
+.project-features h4,
+.project-technologies h4 {
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+}
+
+.project-features li {
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+}
+
+.tech-tag {
+  padding: 0.2rem 0.6rem;
+  font-size: 0.75rem;
+}
+
+.project-links {
+  gap: 0.8rem;
+}
+
+.project-link {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+}
+
+/* Reduce scroll container padding */
+.projects-scroll-container {
+  padding: 0.5rem 1rem;
+  gap: 1rem;
+}
+
+/* Smaller navigation arrows */
+.nav-arrow {
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
+}
+
+/* Responsive adjustments for compact design */
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 2rem 0;
+  }
+  
+  .project-card-animated {
+    min-width: 250px;
+  }
+  
+  .project-img-animated {
+    height: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-section {
+    padding: 1.5rem 0;
+  }
+  
+  .project-card-animated {
+    min-width: 220px;
+  }
+  
+  .project-img-animated {
+    height: 120px;
+  }
+  
+  .project-info-animated {
+    padding: 0.8rem;
+  }
+}

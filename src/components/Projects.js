@@ -76,17 +76,10 @@ const Projects = () => {
               {/* Project Image */}
               <div className="project-img-animated">
                 <img src={project.image} alt={project.title} />
+                
+                {/* NO LIVE DEMO BUTTON HERE */}
                 <div className="project-overlay-animated">
                   <div className="overlay-buttons">
-                    <a 
-                      href={project.link || "#"} 
-                      className="overlay-btn"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <i className="fas fa-external-link-alt"></i> Live Demo
-                    </a>
                     {project.github && (
                       <a 
                         href={project.github} 
@@ -102,7 +95,7 @@ const Projects = () => {
                 </div>
               </div>
               
-              {/* Project Details - Only visible when expanded */}
+              {/* Project Details */}
               <div className={`project-details ${expandedProject === index ? 'expanded' : ''}`}>
                 <div className="project-info-animated">
                   <p>{project.description}</p>
@@ -123,17 +116,9 @@ const Projects = () => {
                       <span key={tagIndex}>{tag}</span>
                     ))}
                   </div>
-                  
+
+                  {/* REMOVE VIEW LIVE DEMO FROM MAIN PROJECTS */}
                   <div className="project-links">
-                    <a 
-                      href={project.link || "#"} 
-                      className="project-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <i className="fas fa-external-link-alt"></i> View Live Demo
-                    </a>
                     {project.github && (
                       <a 
                         href={project.github} 
@@ -178,7 +163,7 @@ const Projects = () => {
                 </button>
               </div>
 
-              {/* Small Project Details - Only visible when expanded */}
+              {/* Small Project Details */}
               <div className={`small-project-details ${expandedSmallProject === index ? 'expanded' : ''}`}>
                 <div className="small-project-info">
                   <p>{project.description}</p>
