@@ -75,8 +75,8 @@ export const portfolioData = {
         "Healthcare analytics"
       ],
       tags: ["Machine Learning", "Python", "Flask", "Healthcare AI", "Google Maps API", "Jupyter NoteBook", "Geolocation"],
-      link: "#",
-      github: "#"
+      link: "healthfirstonline.netlify.app",
+      github: "https://github.com/BUZZEDISHIKA/Medicine-recommender-Ishika"
     },
     {
       id: 2,
@@ -93,7 +93,7 @@ export const portfolioData = {
       ],
       tags: ["React JS", "Javascript", "MongoDB", "HTML", "CSS"],
       link: "#",
-      github: "#"
+      github: "https://github.com/BUZZEDISHIKA/QuizMasterPro"
     },
     {
       id: 3,
@@ -110,25 +110,24 @@ export const portfolioData = {
       ],
       tags: ["Machine Learning", "Python", "Flask"],
       link: "#",
-      github: "#"
+      github: "https://github.com/BUZZEDISHIKA/Stock-market-ishika"
     },
   ],
 
   smallProjects: [
     {
       id: 1,
-      title: "Snake Game",
-      description: "Classic snake game written in C++ with smooth gameplay, score tracking, and increasing difficulty levels. Built using object-oriented programming principles.",
+      title: "Tic-Tac-Toe",
+      description: "Classic Tic-Tac-Toe game based on simple HTML,CSS and Javascript.",
       features: [
-        "Classic snake gameplay",
-        "Score tracking system",
-        "Increasing difficulty",
+        "Classic gameplay",
         "Game over detection",
-        "Smooth controls"
+        "Smooth controls",
+        "GIF Used"
       ],
-      tags: ["C++", "Game", "OOP"],
-      link: "#",
-      github: "https://github.com/example"
+      tags: ["HTML", "CSS", "JavaScript"],
+      link: "tic-tac-toe-ishikacreates6.netlify.app",
+      github: "https://github.com/BUZZEDISHIKA/tic-tac-toe"
     },
     {
       id: 2,

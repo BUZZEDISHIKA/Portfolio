@@ -16,13 +16,17 @@ const Hero = () => {
   const displayText = useTypewriter(texts, 150, 150);
   const textRef = useRef(null);
   const [isVisible, setIsVisible] = useState(true);
-  const [prevLength, setPrevLength] = useState(0);
 
+  // CV download handler
   const handleDownloadCV = (e) => {
     e.preventDefault();
-    alert('Downloading CV...');
+    const link = document.createElement("a");
+    link.href = "/CV.pdf"; // Make sure CV.pdf is in public folder
+    link.download = "Ishika_Bagchi_CV.pdf";
+    link.click();
   };
 
+  // Intersection observer to toggle visibility
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => setIsVisible(entry.isIntersecting),
@@ -34,7 +38,6 @@ const Hero = () => {
       if (textRef.current) observer.unobserve(textRef.current);
     };
   }, []);
-
 
   return (
     <section className="hero">
@@ -54,13 +57,13 @@ const Hero = () => {
           <span className="badge">Coder</span>
           <span className="badge">C & C++</span>
           <span className="badge">PYTHON</span>
-          <span className="badge">Rect.Js</span>
+          <span className="badge">React.Js</span>
         </div>
 
         <div className="hero-buttons">
           <a href="#projects" className="btn btn-primary">View My Work</a>
           <a href="#contact" className="btn btn-secondary">Get In Touch</a>
-          <a href="#" className="btn btn-secondary" onClick={handleDownloadCV}>Download CV</a>
+          <button onClick={handleDownloadCV} className="btn btn-secondary">Download CV</button>
         </div>
       </div>
     </section>
@@ -68,4 +71,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
