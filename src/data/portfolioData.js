@@ -4,8 +4,7 @@ export const portfolioData = {
     name: "Ishika Bagchi",
     title: "Computer Science Professional",
     location: "West Bengal, India",
-    email: "ishika.creates6@gmail.com",
-    phone: "+91 7431816443"
+    email: "ishika.creates6@gmail.com"
   },
   
   education: [
