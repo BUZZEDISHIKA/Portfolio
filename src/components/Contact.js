@@ -82,13 +82,6 @@ const Contact = () => {
                   <p>{portfolioData.personalInfo.email}</p>
                 </div>
               </li>
-              <li>
-                <i className="fas fa-phone"></i>
-                <div>
-                  <h4>Phone</h4>
-                  <p>{portfolioData.personalInfo.phone}</p>
-                </div>
-              </li>
             </ul>
           </div>
 
